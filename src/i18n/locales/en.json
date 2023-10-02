@@ -1,0 +1,13 @@
+{
+  "home.title": "Vue TS",
+  "auth.title": "Vue TS",
+  "header.profile": "Profile",
+  "header.vechicles": "Vechicles",
+  "header.setting": "Setting",
+  "vechicles.selectText": "Select vehicles per page:",
+  "vechicles.addButton": "Add Vechicle",
+  "vechicles.placeholder": "Search VIN",
+  "vechicles.showing": "Showing { n } out of",
+  "vechicles.of": "of"
+}
+

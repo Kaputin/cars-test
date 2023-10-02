@@ -1,0 +1,15 @@
+{
+  "home.title": "Вью ТС",
+  "auth.title": "Вью ТС",
+  "header.profile": "Профиль",
+  "header.vechicles": "Автомобили",
+  "header.setting": "Настройка",
+  "vechicles.selectText": "Количество автомобилей на странице:",
+  "vechicles.addButton": "Добавить Автомобиль",
+  "vechicles.placeholder": "Поиск VIN",
+  "vechicles.showing": "Показаны { n } из",
+  "vechicles.of": "из"
+}
+
+
+

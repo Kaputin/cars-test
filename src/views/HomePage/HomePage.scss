@@ -1,0 +1,259 @@
+.vechicles {
+  display: flex;
+  flex-direction: column;
+  margin-left: 200px;
+  margin-top: 102px;
+  padding: 30px;
+  background-color: $white100;
+  font-family: $DMSans;
+  @include tablet {
+    margin-left: 256px;
+  }
+  &__header {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    @include desktop {
+      flex-direction: row;
+      align-items: center;
+    }
+    &-wrapper {
+      display: flex;
+      flex-direction: column;
+      @include desktop {
+        flex-direction: row;
+        align-items: center;
+      }
+    }
+    &-form {
+      display: flex;
+      position: relative;
+      margin-right: 32px;
+    }
+    &-text {
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 22px;
+      color: $textBlack;
+      margin-right: 16px;
+      margin-top: 10px;
+      @include desktop {
+        margin-top: 0;
+      }
+    }
+    &-search {
+      position: absolute;
+      left: 320px;
+      top: 7px;
+    }
+    &-input {
+      display: flex;
+      width: 354px;
+      height: 42px;
+      padding: 9px 16px 9px 16px;
+      border-radius: 8px;
+      border: 1px solid $textLineGray;
+      &:focus {
+        outline: $secondaryBlue auto 1px;
+      }
+    }
+    &-button {
+      border: none;
+      border-radius: 10px;
+      margin-right: auto;
+      margin-top: 10px;
+      padding: 9px 25px 9px 18px;
+      display: flex;
+      align-items: center;
+      background-color: $primaryRed;
+      color: $white100;
+      cursor: pointer;
+      @include desktop {
+        margin-left: auto;
+        margin-right: 0;
+        margin-top: 0;
+      }
+      svg {
+        fill: $white100;
+        margin-right: 20px;
+      }
+      &:hover {
+        opacity: .85;
+      }
+    }
+    &-select {
+      margin-right: 10px;
+      margin-top: 10px;
+      @include desktop {
+        margin-top: 0;
+      }
+      ::v-deep(.vs__dropdown-toggle) {
+        padding: 5px 16px;
+        width: 85px;
+        border-radius: 8px;
+        border: 1px solid $textLineGray;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 22px;
+        min-height: unset;
+      }
+      ::v-deep(.vs__dropdown-menu) {
+        margin-top: 5px;
+      }
+      ::v-deep(.vs__dropdown-option) {
+        padding: 10px;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 20px;
+      }
+    }
+  }
+  &__list {
+    position: relative;
+    display: grid;
+    margin-top: 32px;
+    gap: 30px;
+    grid-template-columns: repeat(1, 1fr);
+    @include tablet {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @include desktop {
+      grid-template-columns: repeat(3, 1fr);
+    }
+    &.--loading {
+      &:after {
+        position: absolute;
+        content: '';
+        width: 100%;
+        height: 100%;
+        background-color: $textLineGray;
+      }
+    }
+  }
+  &__item {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-height: 335px;
+    background: $primaryLightGrey;
+    padding: 40px 24px 16px;
+    border-radius: 10px;
+    &-dots {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      cursor: pointer;
+      &:hover {
+        opacity: .85;
+      }
+    }
+    &-image {
+      height: 135px;
+    }
+    &-name {
+      display: flex;
+      width: 100%;
+      text-align: start;
+      min-height: 24px;
+      margin-top: 24px;
+      font-size: 20px;
+      font-weight: 700;
+      line-height: 22px;
+      color: $textBlack;
+    }
+    &-vin {
+      display: flex;
+      width: 100%;
+      text-align: start;
+      margin-top: 12px;
+      font-size: 15px;
+      font-weight: 500;
+      line-height: 20px;
+      letter-spacing: 0.3px;
+      color: $textGrey;
+      opacity: .6;
+    }
+    &-wrapper {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      margin-top: 18px;
+      padding-top: 18px;
+      border-top: 1px solid $textLineGray;
+    }
+    &-angles {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 15px;
+      font-weight: 700;
+      line-height: 22px;
+      color: $textBlack;
+      padding: 4px 14px;
+      height: 30px;
+      border-radius: 6px;
+      background: $secondaryGrey;
+      &.--check {
+        width: 93px;
+        background: $lightGreen;
+        color: $secondaryGreen;
+        padding: 4px 12px;
+      }
+    }
+    &-check {
+      margin-right: 7px;
+    }
+  }
+  &__pagination {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 32px;
+    &-count {
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 22px;
+    }
+    &-wrapper {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    &-button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: none;
+      background-color: $white100;
+      cursor: pointer;
+      padding: 0;
+      &:last-child {
+        .vechicles__pagination-icon {
+          transform: rotate(180deg);
+        }
+      }
+    }
+    &-page {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 5px 6px;
+      border-radius: 6px;
+      border: 1px solid $textLineGray;
+      color: $textDarkGrey;
+      font-size: 15px;
+      font-weight: 400;
+      line-height: 22px;
+      min-width: 32px;
+      &:nth-child(4) {
+        color: $textLightGrey;
+      }
+    }
+    &-text {
+      color: $textDarkGrey;
+    }
+  }
+}

@@ -1,0 +1,137 @@
+.header {
+  display: flex;
+  top: 0;
+  z-index: 3;
+  font-family: $DMSans;
+  &__left {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    min-height: 100vh;
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    background: url("@/assets/img/background.png") bottom  no-repeat;
+    background-size: 256px auto;
+    background-color: $primaryBlack;
+    border-radius: 20px 0 0 20px;
+    padding: 30px 0;
+    @include tablet {
+      width: 256px;
+    }
+    &-title {
+      font-weight: 700;
+      color: $white100;
+      margin-left: 56px;
+      font-size: 24px;
+      line-height: 24px;
+    }
+    &-navigation {
+      margin-top: 102.55px;
+      display: flex;
+      flex-direction: column;
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 20px;
+      color: $white45;
+    }
+    &-link {
+      display: flex;
+      align-items: center;
+      padding: 12px 30px;
+      margin-bottom: 16px;
+      gap: 20px;
+      cursor: pointer;
+      &.active {
+        color: $white100;
+        border-left: 2px solid $primaryRed;
+      }
+    }
+  }
+  &__top {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 102px;
+    top: 0;
+    width: calc(100% - 200px);
+    max-width: 1184px;
+    padding: 30px 38px 26px 30px;
+    margin-left: 200px;
+    background-color: $white100;
+    border-bottom: 1px solid $textLineGray;
+    border-top-right-radius: 20px;
+    @include tablet {
+      width: calc(100% - 256px);
+      margin-left: 256px;
+    }
+    &-wrapper {
+      display: flex;
+      align-items: center;
+    }
+    &-title {
+      font-size: 32px;
+      font-weight: 700;
+      line-height: 38px;
+      color: $textBlack;
+    }
+    &-count {
+      margin-left: 18px;
+      padding: 4px 14px;
+      color: $textDarkGrey;
+      font-size: 15px;
+      font-weight: 700;
+      line-height: 22px;
+      background: $secondaryGrey;
+      border-radius: 6px;
+    }
+    &-plus {
+      display: flex;
+      align-items: center;
+      border: 1px solid $secondaryLightRed;
+      width: 42px;
+      height: 42px;
+      padding: 9px;
+      border-radius: 6px;
+      background-color: $white100;
+      cursor: pointer;
+      margin-right: 40px;
+      svg {
+        fill: $secondaryLightRed;
+      }
+      &:hover {
+        border: 1px solid $primaryRed;
+        svg {
+          fill: $primaryRed;
+        }
+      }
+    }
+    &-profile {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      text-decoration: unset;
+      margin-right: 32px;
+    }
+    &-avatar {
+      height: 46px;
+    }
+    &-name {
+      font-size: 15px;
+      font-weight: 500;
+      line-height: 22px;
+      color: $textBlack;
+    }
+    &-language {
+      display: flex;
+      align-items: center;
+      width: 85px;
+      gap: 14px;
+    }
+    &-icon {
+      width: 24px;
+      height: 24px;
+    }
+  }
+}

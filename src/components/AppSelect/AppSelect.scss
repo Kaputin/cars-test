@@ -1,0 +1,133 @@
+.app-select {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  position: relative;
+  &__name {
+    margin-bottom: 7px;
+    color: $textBlack;
+    i {
+      color: $primaryRed;
+    }
+  }
+}
+.v-select {
+  background: $white100;
+  min-height: unset;
+  * {
+    box-sizing: border-box;
+    box-shadow: unset;
+  }
+  &.vs--single.vs--open {
+    .vs__selected {
+      position: static;
+      opacity: 1;
+    }
+  }
+  &.vs--single.vs--open {
+    .vs__selected {
+      position: static;
+      opacity: 1;
+    }
+  }
+  &.vs--open {
+    .vs__dropdown-toggle {
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+    .vs__dropdown-menu {
+      min-width: unset;
+      border-top-color: transparent;
+      box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.1);
+      border: none;
+    }
+  }
+  .vs__dropdown-toggle {
+    min-height: 50px;
+    transition: border-color 0.2s linear;
+    border: none;
+    border-radius: unset;
+    padding: 0;
+  }
+  .vs__selected {
+    margin: 0;
+    padding: 0;
+    font-family: $DMSans;
+    background: $white100;
+    color: $textBlack;
+    border: none;
+    border-radius: unset;
+    text-transform: capitalize;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 22px;
+    & + .vs__search {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      padding: 0;
+      margin: -1px;
+      border: 0;
+      clip: rect(0 0 0 0);
+    }
+  }
+  .vs__selected-options {
+    margin: 0;
+    padding: 0;
+  }
+  .vs__search {
+    margin: 0;
+    padding-left: 20px;
+    &::placeholder {
+      color: $textGrey;
+    }
+  }
+  .vs__actions {
+    margin: 0;
+    border: none;
+    padding: 0;
+    background: $white100;
+    svg {
+      fill: none;
+    }
+  }
+  .vs__dropdown-menu {
+    transition: border-color 0.2s linear;
+    border: 1px solid $textGrey;
+    border-top-color: transparent;
+    padding: 0;
+  }
+  .vs__dropdown-option {
+    margin: 0;
+    padding: 5px;
+    text-transform: capitalize;
+    box-sizing: border-box;
+    background: $white100;
+    color: $textBlack;
+    outline: none;
+    border: none;
+    transition: color 0.2s linear;
+    position: relative;
+    min-width: unset;
+    font-family: $DMSans;
+    &:after {
+      content: '';
+      transition: background 0.2s linear;
+      position: absolute;
+      height: 100%;
+      width: 2px;
+      background: transparent;
+      left: 0;
+      top: 0;
+    }
+    &:hover {
+      color: $primaryRed;
+      &:after {
+        background: $primaryRed;
+      }
+    }
+  }
+  .vs__loader {
+    @include loading($primaryRed, 15px, 15px)
+  }
+}
